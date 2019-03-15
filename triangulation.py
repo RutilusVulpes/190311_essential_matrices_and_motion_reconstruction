@@ -76,7 +76,7 @@ E,inliers = cv2.findEssentialMat(x1[:,:2],x2[:,:2],np.eye(3),method=cv2.RANSAC,t
 inliers = inliers.ravel().astype(bool)
 print(E,inliers)
 
-:
+
 
 n_in,R,t,_ = cv2.recoverPose(E,x1[inliers,:2],x2[inliers,:2])
 print(R,t)
@@ -87,6 +87,9 @@ P_1 = np.array([[1,0,0,0],
 P_2 = np.hstack((R,t))
 
 
-
 P_1c = K_cam @ P_1
 P_2c = K_cam @ P_2
+
+vt = triangulate(P_1c,P_2c,x1,x2)
+
+print(vt)
