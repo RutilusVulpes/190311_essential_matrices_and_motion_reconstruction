@@ -14,8 +14,8 @@ def triangulate(P0,P1,x1,x2):
     u,s,vt = np.linalg.svd(A)
     return vt[-1]
 
-I_1 = plt.imread('/falcon/DSC03919.JPG')
-I_2 = plt.imread('/falcon/DSC03920.JPG')
+I_1 = plt.imread('falcon/DSC03919.JPG')
+I_2 = plt.imread('falcon/DSC03920.JPG')
 
 h,w,d = I_1.shape
 
